@@ -1,15 +1,11 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import MaterialTable from 'material-table'
-import axios from 'axios'
+
 export const Footer = () => {
 
-
-
-  const [tempdata,setTempdata] = useState([]);
+  const [tempdata,setTempdata] = useState('');
   const [finalData,setFinalData] = useState([]);
-  
-
 
   useEffect(() => {
    
@@ -18,10 +14,13 @@ var data = '';
 
 var config = {
   method: 'post',
-   //url: 'http://localhost:51923/Api/Affiliate/AffDoctorPatientlist',
-  url:'https://welcomecure.com/DataProvider/API/Affiliate/AffDoctorPatientlist',
+  // url: 'http://localhost:51923/Api/Affiliate/AffDoctorPatientlist',
+  url:'https://welcomecure.com/API/Affiliate/AffDoctorPatientlist',
 
   headers: { 
+          'Access-Control-Allow-Origin':'*',
+          "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+          "origine":"http://localhost:3000/",
     'UserName': 'WelcomeWebApi', 
     'Password': 'welcomecure123', 
     'Authorization': 'Basic WDVPMFgxSDIwSWo3WjI2WXJhanowZGFpcmNpczczbnk3MjNmYzlUM3U3WktaTnZIaW5WbmNTbWt0V1FuM3BYQTdUd1hWZ2d6ckNkOlRVakxoTzVqNGFOM1V0bzYydDkzaHZ5ZDlNNktEUg=='
@@ -51,12 +50,15 @@ var data = JSON.stringify({
   "_ContactType":"",
   "UserId": 1222290
 });
-
+//1222290
 var config = {
   method: 'post',
-  //url: 'http://localhost:51923/Api/Affiliate/AffDoctorPatientlist',
-  url: 'https://welcomecure.com/DataProvider/API/Affiliate/AffDoctorPatientlist',
+ // url: 'http://localhost:51923/Api/Affiliate/AffDoctorPatientlist',
+  url: 'https://welcomecure.com/API/Affiliate/AffDoctorPatientlist',
   headers: { 
+    'Access-Control-Allow-Origin':'*',
+    "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+
     'Content-Type': 'application/json', 
     'UserName': 'WelcomeWebApi', 
     'Password': 'welcomecure123', 
